@@ -3,6 +3,7 @@ import cogImage from "@/assets/cog.png";
 import cylinderImage from "@/assets/cylinder.png";
 import noodleImage from "@/assets/noodle.png";
 import { Button } from "@/components/Button";
+import { Tag } from "@/components/Tag";
 import Image from "next/image";
 
 export const Hero = () => {
@@ -11,9 +12,7 @@ export const Hero = () => {
             <div className="container">
                 <div className="items-center md:flex">
                     <div className="md:w-[478px]">
-                        <div className="inline-flex rounded-lg border border-black/10 px-3 py-1 text-sm font-medium tracking-tight">
-                            Version 2.0 is here
-                        </div>
+                        <Tag>Version 2.0 is here</Tag>
                         <h1 className="mt-6 bg-gradient-to-b from-black to-blue-900 bg-clip-text text-5xl font-bold tracking-tighter text-transparent md:text-7xl">
                             Pathway to productivity
                         </h1>
