@@ -1,25 +1,26 @@
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import clsx from "clsx";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Light Saas Landing Page",
-  description: "Light Saas Landing Page with pixel perfect design, responsive layout and animations.",
+    title: "Light Saas Landing Page",
+    description:
+        "Light Saas Landing Page with pixel perfect design, responsive layout and animations.",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" className="relative">
-      <body className={clsx(dmSans.className, "antialiased bg-[#EAEEFE]")}>
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" className="relative pb-[10000px]">
+            <body className={cn(dmSans.className, "bg-[#EAEEFE] antialiased")}>
+                {children}
+            </body>
+        </html>
+    );
 }
