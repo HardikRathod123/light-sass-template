@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export const Hero = () => {
     return (
-        <section className="bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] pb-20 pt-8 md:pb-10 md:pt-5">
+        <section className="overflow-x-clip bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] pb-20 pt-8 md:pb-10 md:pt-5">
             <div className="container">
                 <div className="items-center md:flex">
                     <div className="md:w-[478px]">
