@@ -12,7 +12,7 @@ const navLinks = [
 ];
 export const Header = () => {
     return (
-        <header className="sticky top-0">
+        <header className="sticky top-0 z-20 backdrop-blur-sm">
             <div className="flex items-center justify-center gap-3 bg-black py-3 text-center text-xs text-white md:text-sm">
                 <p className="hidden text-center font-medium text-white/60 md:block">
                     Streamline your workflow and boost your productivity.
