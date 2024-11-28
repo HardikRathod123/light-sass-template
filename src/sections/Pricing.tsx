@@ -78,7 +78,7 @@ export const Pricing = () => {
                             <div
                                 key={title}
                                 className={cn(
-                                    "w-full max-w-xs rounded-3xl border border-gray-200 p-10 shadow-[0_7px_14px_#EAEAEA]",
+                                    "card",
                                     inverse &&
                                         "border-black bg-black text-white",
                                 )}

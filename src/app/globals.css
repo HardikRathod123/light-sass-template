@@ -13,4 +13,8 @@
     .section-heading {
         @apply mx-auto max-w-[540px];
     }
+
+    .card {
+        @apply w-full max-w-xs rounded-3xl border border-gray-200 p-10 shadow-[0_7px_14px_#EAEAEA];
+    }
 }
