@@ -17,7 +17,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="relative pb-[10000px]">
+        <html lang="en" className="relative">
             <body className={cn(dmSans.className, "bg-[#EAEEFE] antialiased")}>
                 {children}
             </body>
