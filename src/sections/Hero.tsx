@@ -1,14 +1,26 @@
+"use client";
 import ArrowRight from "@/assets/arrow-right.svg";
 import cogImage from "@/assets/cog.png";
 import cylinderImage from "@/assets/cylinder.png";
 import noodleImage from "@/assets/noodle.png";
 import { Button } from "@/components/Button";
 import { Tag } from "@/components/Tag";
-import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export const Hero = () => {
+    const heroRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: heroRef,
+        offset: ["start end", "end start"],
+    });
+    const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
     return (
-        <section className="overflow-x-clip bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] pb-20 pt-8 md:pb-10 md:pt-5">
+        <section
+            className="overflow-x-clip bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] pb-20 pt-8 md:pb-10 md:pt-5"
+            ref={heroRef}
+        >
             <div className="container">
                 <div className="items-center md:flex">
                     <div className="md:w-[478px]">
@@ -30,20 +42,36 @@ export const Hero = () => {
                         </div>
                     </div>
                     <div className="relative mt-20 md:mt-0 md:h-[648px] md:flex-1">
-                        <Image
-                            src={cogImage}
+                        <motion.img
+                            src={cogImage.src}
                             alt="Cog image"
                             className="md:absolute md:h-full md:w-auto md:max-w-none md:-translate-x-6 lg:translate-x-0"
+                            animate={{
+                                translateY: [-30, 30],
+                            }}
+                            transition={{
+                                repeat: Infinity,
+                                repeatType: "mirror",
+                                duration: 3,
+                                ease: "easeInOut",
+                            }}
                         />
-                        <Image
-                            src={cylinderImage}
+                        <motion.img
+                            src={cylinderImage.src}
                             alt="Cylinder image"
-                            className="hidden size-56 -translate-x-32 -translate-y-8 md:absolute md:block"
+                            className="-left-32 -top-8 hidden size-56 md:absolute md:block"
+                            style={{
+                                translateY,
+                            }}
                         />
-                        <Image
-                            src={noodleImage}
+                        <motion.img
+                            src={noodleImage.src}
                             alt="Noodle image"
-                            className="hidden size-56 translate-x-[448px] translate-y-[524px] rotate-[30deg] md:absolute md:block"
+                            className="left-[448px] top-[524px] hidden size-56 md:absolute md:block"
+                            style={{
+                                rotate: 30,
+                                translateY,
+                            }}
                         />
                     </div>
                 </div>
